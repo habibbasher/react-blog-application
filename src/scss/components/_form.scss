@@ -1,0 +1,22 @@
+
+.form-field {
+    #{&}__label {
+        color: $secondary-color;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    #{&}__control {
+        border: 1px solid $light-grey;
+        padding: 5px 10px;
+        border-radius: 0;
+        &.is-invalid {
+            border-color: $primary-color!important;
+        }
+    }
+    .form-control {
+        &:focus {
+            box-shadow: none!important;
+            border-color: $accent-color;
+        }
+    }
+}

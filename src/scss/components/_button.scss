@@ -1,0 +1,45 @@
+.primary-button {
+    @include button($primary-color, $text-color);
+}
+.secondary-button {
+    @include button($secondary-color, $text-color);
+}
+.accent-button {
+    @include button($accent-color, $text-color);
+}
+
+.primary-button-outline {
+    @include button-outline($primary-color, $text-color);
+}
+.secondary-button-outline {
+    @include button-outline($secondary-color, $text-color);
+}
+.accent-button-outline {
+    @include button-outline($accent-color, $text-color);
+}
+
+.primary-button-rounded {
+    @include rounded(100px);
+    @include button($primary-color, $text-color);
+}
+.secondary-button-rounded {
+    @include rounded(100px);
+    @include button($secondary-color, $text-color);
+}
+.accent-button-rounded {
+    @include rounded(100px);
+    @include button($accent-color, $text-color);
+}
+
+.primary-button-outline-rounded {
+    border-radius: 100px;
+    @include button-outline($primary-color, $text-color);
+}
+.secondary-button-outline-rounded {
+    border-radius: 100px;
+    @include button-outline($secondary-color, $text-color);
+}
+.accent-button-outline-rounded {
+    border-radius: 100px;
+    @include button-outline($accent-color, $text-color);
+}

@@ -1,0 +1,157 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin darkOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 700px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+
+@mixin transition($value) {
+  -webkit-transition: all $value ease-in-out;
+  -moz-transition: all $value ease-in-out;
+  -ms-transition: all $value ease-in-out;
+  -o-transition: all $value ease-in-out;
+  transition: all $value ease-in-out;
+}
+
+@mixin flexCenter ($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin  box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+      -webkit-box-shadow:inset $top $left $blur $color;
+      -moz-box-shadow:inset $top $left $blur $color;
+      box-shadow:inset $top $left $blur $color;
+  } @else {
+      -webkit-box-shadow: $top $left $blur $color;
+      -moz-box-shadow: $top $left $blur $color;
+      box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin theme($light-theme: true) {
+  @if $light-theme {
+      background: lighten($primary-color, 100%);
+      color: darken($text-color, 100%);
+  }
+}
+
+@mixin button($btn_color, $btn_text_color) {
+  border: none;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: 1em 1.55em;
+  @include transition(0.2s);
+
+  color: $btn_text_color !important;
+  font-weight: bold;
+  background: $btn_color;
+  &:focus {
+    outline: none!important;
+  }
+  &:hover {
+    text-decoration: none;
+    background: darken($btn_color, 10);
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+    color: darken($btn_color, 15);
+  }
+}
+
+@mixin button-outline($btn_color, $btn_text_color) {
+  border: 1px solid $btn_color;
+  background: transparent;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: 1em 1.55em;
+  @include transition(0.2s);
+  
+  color: $btn_color;
+  font-weight: bold;
+  &:focus {
+    outline: none!important;
+  }
+  &:hover {
+    text-decoration: none;
+    background: $btn_color;
+    color: lighten($btn_color, 100);
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+    background: darken($btn_color, 10);
+    color: lighten($btn_color, 100);
+  }
+}
+
+@mixin rounded($value) {
+  -webkit-border-radius: $value; 
+  -moz-border-radius: $value;
+  border-radius: $value;
+}
+
+@mixin gradient($from, $to) {
+  background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+  background: -moz-linear-gradient(top,  $from, $to);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
+@mixin media-sm {
+  @media screen and (max-width: 500px) {
+      @content;
+  }
+}
+@mixin media-md {
+  @media screen and (max-width: 768px) {
+      @content;
+  }
+}
+@mixin media-lg {
+  @media screen and (max-width: 1024px) {
+      @content;
+  }
+}
+@mixin media-xl {
+  @media screen and (min-width: 1300px) {
+      @content;
+  }
+}

@@ -1,0 +1,128 @@
+html,
+body {
+    height: 100%;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 10px;
+}
+
+body {
+    background: lighten($secondary-color, 80);
+    color: set-text-color($text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* width */
+    position: relative;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: rgb(104, 104, 104);
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    @include media-md {
+        background: transparent;
+    }
+}
+a {
+    color: set-text-color($text-color);
+}
+.wrapper {
+    min-height: 100%;
+    // padding-bottom: 54px;
+    position: relative;
+}
+.body-wrapper {
+    padding-left: 300px;
+    @include transition(0.3s);
+    @include media-lg {
+        padding-left: 0;
+    }
+    &.open {
+        opacity: 0.4;
+        .inner-content {
+            overflow: hidden;
+        }
+    }
+}
+.body-content {
+    position: relative;
+    min-height: 100%;
+    // padding: 30px 30px 55px 30px;
+    color: set-text-color($secondary-color);
+    @include media-md {
+        // padding: 55px 0;
+    }
+}
+.app-container {
+    padding: 0 16px;
+}
+.inner-content {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 70px;
+    padding-top: 20px;
+    @include media-lg {
+        padding-top: 65px;
+    }
+}
+.page-title {
+    font-size: 25px;
+    color: $primary-color;
+    @include media-md {
+        padding-left: 15px;
+    }
+}
+.inner-content-wrap {
+    @include media-md {
+        padding: 0;
+    }
+}
+.portfolio-grid {
+    display: flex;
+    flex-flow: wrap;
+    margin: 0 -16px;
+    @include media-sm {
+        flex-direction: column;
+    }
+    .grid-col {
+        flex: 0 0 (100% / 3);
+        width: (100% / 3);
+        padding: 0 16px;
+        @include media-md {
+            flex: 0 0 (100% / 2);
+            width: (100% / 2);
+        }
+        @include media-sm {
+            flex: 0 0 (100% / 1);
+            width: (100% / 1);
+        }
+    }
+}
+.inner-content {
+    height: 100%;
+}
+
+.light {
+    @include theme($light-theme: false);
+}
+

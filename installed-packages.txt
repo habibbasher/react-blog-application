@@ -1,0 +1,2 @@
+npm i react-redux react-router-dom redux redux-logger redux-persist redux-saga reselect styled-components
+npm i axios bootstrap jquery node-sass popper.js

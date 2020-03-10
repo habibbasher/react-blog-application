@@ -1,0 +1,36 @@
+footer {
+    background: rgba($text-color, 0.5);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 12px 30px;
+    @include media-md {
+        background: rgba( $text-color, 0.3);
+        padding: 12px 16px;
+    }
+    p {
+        margin: 0;
+        padding: 0;
+        color: $secondary-color;
+    }
+}
+.social-icon {
+    margin: 0 -5px;
+    padding: 0 0 0 25px;    
+    #{&}__link {
+        background: $accent-color;
+        border-radius: 100%;
+        color: $text-color;
+        line-height: 30px;
+        display: inline-block;
+        margin: 0 5px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        text-decoration: none;
+    }
+}

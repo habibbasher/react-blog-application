@@ -1,0 +1,36 @@
+.fill-height {
+  height: 100%;
+}
+.block-field {
+  display: block;
+  width: 100%;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-color-primary {
+  color: $primary-color;
+}
+.text-color-secondary {
+  color: $secondary-color;
+}
+.text-color-light {
+  color: $text-color;
+}
+.divider-grey {
+  border-bottom: 1px solid $light-grey;
+}
+.inline-white-link {
+  font-size: 14px;
+  @include transition(0.2s);
+  &:hover {
+    color: $accent-color;
+    text-decoration: none;
+  }
+}

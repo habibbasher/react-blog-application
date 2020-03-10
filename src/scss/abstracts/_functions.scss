@@ -1,0 +1,17 @@
+@function weight($weight-name) {
+    @return map-get($font-weight, $weight-name);
+}
+
+@function set-text-color($color) {
+    @if (lightness($color) < 40%) {
+      @return #000000;
+    } @else {
+      @return #ffffff;
+    }
+}
+
+@for $i from 1 through 4 {
+  .menu-nav__item:nth-child(#{$i}) {
+    transition-delay: ($i * 0.1s) + 0.15s;
+  }
+}

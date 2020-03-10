@@ -1,0 +1,57 @@
+
+
+.home-content {
+    background: linear-gradient(
+        to left,
+        rgba($secondary-color, 0.7),
+        rgba($secondary-color, 0.7),
+    ),
+    url('../../assets/img/model-1.jpg') center top no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    color: set-text-color($text-color);
+    #{&}__about-me {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+        h3 {
+            font-size: 70px;
+            padding-bottom: 35px;
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 10px;
+                right: 0;
+                height: 2px;
+                width: 100%;
+                @include media-lg {
+                    right: 0;
+                }
+
+                background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+
+            }
+            @include media-md {
+                font-size: 9vw;
+            }
+        }
+        p {
+            font-size: 34px;
+            @include media-md {
+                font-size: 5vw;
+            }
+            span {
+                // display: block;
+                font-weight: weight(bold);
+            }
+        }
+    }
+}
